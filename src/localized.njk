@@ -1,0 +1,24 @@
+---
+title: Daily Briefing
+layout: base.njk
+pagination:
+    data: news
+    size: 1
+    alias: news
+permalink: /{{ news.country }}/index.html
+---
+ 
+<div class="container">
+    <h1>This is a static page!!!</h1>
+    <div class="love">💜</div>
+    <div class="vibe">You are great!</div>
+    <ul>
+       {% for article in news.articles %}
+        <li>
+            <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+            <span>{{ article.source.name }} -<time>{{ article.publishedAt }}</time></span>
+        </li> 
+       {% endfor %}
+    </ul>
+</div>
+<script src="/js/vibe.js"></script>
